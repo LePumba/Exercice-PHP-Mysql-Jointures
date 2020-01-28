@@ -1,15 +1,14 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: sstienface
- * Date: 04/12/2018
- * Time: 11:25
- */
+require 'connect.php';
 
-// Premiere ligne
+$liste = "SELECT * FROM eleves";
 
+$result = $conn->query($liste);
 
-
+while($row = $result->fetch_assoc())
+{
+    echo "<br>" . $row['nom'] . " " . $row['prenom'] . " <a href='index2.php?id=".$row['id']."'>+</a><br>";
+}
 
 
 
